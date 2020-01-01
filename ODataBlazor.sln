@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ODataBlazor.Server", "src\ODataBlazor.Server\ODataBlazor.Server.csproj", "{EA6FBE5A-A17C-4719-A356-775ABAFA7302}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ODataBlazor.Common", "src\ODataBlazor.Common\ODataBlazor.Common.csproj", "{4E590386-2E20-4AFF-BBFE-370E4A171EDD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EA6FBE5A-A17C-4719-A356-775ABAFA7302}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA6FBE5A-A17C-4719-A356-775ABAFA7302}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA6FBE5A-A17C-4719-A356-775ABAFA7302}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA6FBE5A-A17C-4719-A356-775ABAFA7302}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E590386-2E20-4AFF-BBFE-370E4A171EDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E590386-2E20-4AFF-BBFE-370E4A171EDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E590386-2E20-4AFF-BBFE-370E4A171EDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E590386-2E20-4AFF-BBFE-370E4A171EDD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
