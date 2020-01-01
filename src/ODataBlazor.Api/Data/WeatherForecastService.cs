@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using System.Threading.Tasks;
+using ODataBlazor.Server.Model;
 
 namespace ODataBlazor.Server.Data
 {

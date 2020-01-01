@@ -1,6 +1,6 @@
 using System;
 
-namespace ODataBlazor.Server.Data
+namespace ODataBlazor.Server.Model
 {
     public class WeatherForecast
     {

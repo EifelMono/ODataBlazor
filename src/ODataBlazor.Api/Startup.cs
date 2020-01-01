@@ -2,15 +2,22 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNet.OData.Builder;
+using Microsoft.AspNet.OData.Extensions;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+using Microsoft.OData.Edm;
+using ODataBlazor.Api.Data;
+using ODataBlazor.Common.Models;
+using ODataBlazor.Server.Data;
 
-namespace ODataBlazor.Server
+namespace ODataBlazor.Api
 {
     public class Startup
     {
@@ -22,11 +29,12 @@ namespace ODataBlazor.Server
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
-        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddRazorPages();
-            services.AddServerSideBlazor();
+            services.AddSingleton(typeof(IDataRepository), new DefaultDataRespository());
+            services.AddSingleton<WeatherForecastService>();
+            services.AddOData();
+            services.AddControllers(mvcOptions => mvcOptions.EnableEndpointRouting = false);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -36,23 +44,27 @@ namespace ODataBlazor.Server
             {
                 app.UseDeveloperExceptionPage();
             }
-            else
-            {
-                app.UseExceptionHandler("/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
-            }
 
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
 
             app.UseRouting();
 
-            app.UseEndpoints(endpoints =>
+            app.UseAuthorization();
+
+            app.UseMvc(routeBuilder =>
             {
-                endpoints.MapBlazorHub();
-                endpoints.MapFallbackToPage("/_Host");
+                routeBuilder.Select().Filter().Expand();
+                routeBuilder.MapODataServiceRoute("odata", "odata", GetEdmModel());
             });
+        }
+
+        public static IEdmModel GetEdmModel()
+        {
+            var builder = new ODataConventionModelBuilder();
+            builder.EntitySet<Customer>("Customers");
+            builder.EntitySet<Order>("Orders");
+            builder.EntitySet<ZipCode>("ZipCodes");
+            return builder.GetEdmModel();
         }
     }
 }
