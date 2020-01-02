@@ -9,11 +9,11 @@
     <ProjectReference Include="..\ODataBlazor.Common\ODataBlazor.Common.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
+    <ProjectReference Include="..\ODataBlazor.Data\ODataBlazor.Data.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Controllers\CustomersController.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Data\" />
   </ItemGroup>
 </Project>

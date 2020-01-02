@@ -3,7 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using ODataBlazor.Common.Models;
 
-namespace ODataBlazor.Server.Data
+namespace ODataBlazor.Data
 {
     public class WeatherForecastService
     {

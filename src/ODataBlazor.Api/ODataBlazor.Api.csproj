@@ -11,8 +11,8 @@
             <GlobalPropertiesToRemove>
             </GlobalPropertiesToRemove>
         </ProjectReference>
-    </ItemGroup>
-    <ItemGroup>
-      <Folder Include="Data\" />
+        <ProjectReference Include="..\ODataBlazor.Data\ODataBlazor.Data.csproj">
+          <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+        </ProjectReference>
     </ItemGroup>
 </Project>

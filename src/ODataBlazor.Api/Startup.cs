@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OData.Edm;
-using ODataBlazor.Api.Data;
+using ODataBlazor.Data;
 using ODataBlazor.Common.Models;
 
 namespace ODataBlazor.Api

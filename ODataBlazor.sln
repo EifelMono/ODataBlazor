@@ -7,6 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ODataBlazor.Common", "src\O
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ODataBlazor.Api", "src\ODataBlazor.Api\ODataBlazor.Api.csproj", "{E126E2D5-07B2-4657-AC5A-325646572E5F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ODataBlazor.Data", "src\ODataBlazor.Data\ODataBlazor.Data.csproj", "{85E9590E-D362-4387-B605-EE549F9290A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EifelMono.OLinq", "src\EifelMono.OLinq\EifelMono.OLinq.csproj", "{98F9451D-3999-4211-861B-52DBEE7A0F45}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EifelMono.OLinqTest", "src\EifelMono.OLinqTest\EifelMono.OLinqTest.csproj", "{0CF9F395-4BE4-4081-AD87-85B45B0EA689}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,5 +31,17 @@ Global
 		{E126E2D5-07B2-4657-AC5A-325646572E5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E126E2D5-07B2-4657-AC5A-325646572E5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E126E2D5-07B2-4657-AC5A-325646572E5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85E9590E-D362-4387-B605-EE549F9290A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85E9590E-D362-4387-B605-EE549F9290A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85E9590E-D362-4387-B605-EE549F9290A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85E9590E-D362-4387-B605-EE549F9290A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98F9451D-3999-4211-861B-52DBEE7A0F45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98F9451D-3999-4211-861B-52DBEE7A0F45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98F9451D-3999-4211-861B-52DBEE7A0F45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98F9451D-3999-4211-861B-52DBEE7A0F45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CF9F395-4BE4-4081-AD87-85B45B0EA689}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CF9F395-4BE4-4081-AD87-85B45B0EA689}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CF9F395-4BE4-4081-AD87-85B45B0EA689}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CF9F395-4BE4-4081-AD87-85B45B0EA689}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

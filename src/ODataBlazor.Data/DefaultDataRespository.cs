@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using ODataBlazor.Common.Models;
 
-namespace ODataBlazor.Api.Data
+namespace ODataBlazor.Data
 {
     public class DefaultDataRespository : IDataRepository
     {
