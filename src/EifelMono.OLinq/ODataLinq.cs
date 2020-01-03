@@ -3,14 +3,11 @@
     public static class ODataLinq
     {
 
-        public static IODataLinqBuilderCreate<T> Get<T>(string uri) where T : class
-        {
-            var oDataLinqBuilder = new ODataLinqBuilder<T>();
-            oDataLinqBuilder.Self = oDataLinqBuilder;
-            oDataLinqBuilder.Uri = uri;
-            oDataLinqBuilder.ModelType = typeof(T);
-            return oDataLinqBuilder;
-        }
+        public static IODataLinqBuilderGet<T> Get<T>(string uri) where T : class
+            => new ODataLinqBuilder<T>
+            {
+                Uri = uri
+            };
     }
 
 }
