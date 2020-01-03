@@ -17,18 +17,18 @@ namespace EifelMono.OLinq
     {
     }
 
-    public class ODataLinqBuilder<T> : IODataLinqBuilderSelf<T>,
-        IODataLinqBuilderGet<T>,
-        IODataLinqBuilderWhere<T> where T : class
+    public class ODataLinqBuilder<TModel> : IODataLinqBuilderSelf<TModel>,
+        IODataLinqBuilderGet<TModel>,
+        IODataLinqBuilderWhere<TModel> where TModel : class
     {
 
         public ODataLinqBuilder()
         {
-            ModelType = typeof(T);
+            ModelType = typeof(TModel);
             Self = this;
         }
 
-        public ODataLinqBuilder<T> Self { get; set; }
+        public ODataLinqBuilder<TModel> Self { get; set; }
         public Type ModelType { get; set; }
 
         #region Get
@@ -37,7 +37,7 @@ namespace EifelMono.OLinq
         #endregion
 
         #region where 
-        public Expression<Func<bool, T>> WhereExpressionFunc { get; set; }
+        public Expression<Func<bool, TModel>> WhereExpressionFunc { get; set; }
         #endregion
 
     }
