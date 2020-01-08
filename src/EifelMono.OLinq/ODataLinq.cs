@@ -2,11 +2,10 @@
 {
     public static class ODataLinq
     {
-
-        public static IODataLinqBuilderGet<T> Get<T>(string uri) where T : class
-            => new ODataLinqBuilder<T>
+        public static ODataLinqBuilder<TModel> Get<TModel>(string uri) where TModel : class
+            => new ODataLinqBuilder<TModel>
             {
-                Uri = uri
+                _uri = uri
             };
     }
 

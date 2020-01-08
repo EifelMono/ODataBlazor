@@ -7,6 +7,8 @@ namespace ODataBlazor.Common.Models
 {
     public class Customer
     {
+        public DateTime TimeStamp { get; set; }
+
         public int Id { get; set; }
 
         public string Name { get; set; }
