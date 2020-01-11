@@ -19,8 +19,23 @@ namespace EifelMono.OLinqTest
         {
             var repro = new DefaultDataRespository();
 
-            var y = repro.GetCustomers().Select(c => c.Name);
-            var z = repro.GetCustomers().OrderBy(c=> c.Orders).Select(c => c.Name);
+            {
+                var y = repro.GetCustomers().Select(c => c.Name);
+                var z = repro.GetCustomers().OrderBy(c => c.Orders).Select(c => c.Name);
+            }
+
+            {
+
+                int[] ints1 = { 5, 3, 9, 7, 5, 9, 3, 7 };
+                int[] ints2 = { 8, 3, 6, 4, 4, 9, 1, 0 };
+
+                var union = ints1.Union(ints2);
+
+                foreach (int num in union.OrderBy(i=> i))
+                {
+                    Console.Write("{0} ", num);
+                }
+            }
         }
 
         [Fact]
@@ -49,7 +64,7 @@ namespace EifelMono.OLinqTest
             {
                 var sw = Stopwatch.StartNew();
                 var x = new ODataQuery<Customer>();
-                x.SetFilter(c => c.TimeStamp== DateTime.Now);
+                x.SetFilter(c => c.TimeStamp == DateTime.Now);
                 var s = x.ToString();
                 sw.Stop();
                 Debug.WriteLine(sw.ElapsedMilliseconds);

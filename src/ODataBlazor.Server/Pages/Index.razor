@@ -3,3 +3,61 @@
 <h1>Hello, world!</h1>
 
 Welcome to your new app.
+
+
+<ModalBootstrap @ref="modal1" Title="Daten eingabe">
+    <p>
+        das ist mein Content
+    </p>
+    test <input @bind="daten" />
+</ModalBootstrap>
+
+
+<button class="btn" @onclick="ButtonOpenModal">Show</button>
+<button class="btn" @onclick="ButtonRefresh">Refresh</button>
+
+@daten
+
+
+<TabControl>
+    <TabPage Text="Tab 1">
+        <h1>The first tab</h1>
+    </TabPage>
+    <TabPage Text="Tab 2">
+        <h1>The second tab</h1>
+    </TabPage>
+    <TabPage Text="Tab 3">
+        <h1>The third tab</h1>
+    </TabPage>
+</TabControl>
+
+@DateTime.Now.ToString()
+@DynamicFragment
+
+@code {
+    public string daten { get; set; }
+    ModalBootstrap modal1;
+
+    private RenderFragment DynamicFragment;
+
+    protected override void OnInitialized()
+    {
+        DynamicFragment = builder =>
+        {
+            // Make the text longer every time this delegate is called
+            builder.OpenElement(1, "p");
+            builder.AddContent(2, DateTime.Now.ToString());
+            builder.CloseElement();
+        };
+    }
+
+    void ButtonOpenModal()
+    {
+        modal1.Show();
+    }
+
+    void ButtonRefresh()
+    {
+        StateHasChanged();
+    }
+}

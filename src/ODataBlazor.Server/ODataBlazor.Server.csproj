@@ -15,5 +15,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Controllers\CustomersController.cs" />
+    <Compile Remove="Components\ModalBootstrap.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Components\" />
+    <Folder Include="Extensions\" />
   </ItemGroup>
 </Project>
